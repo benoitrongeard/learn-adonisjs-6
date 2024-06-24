@@ -8,6 +8,7 @@
   @vite(['resources/js/app.js'])
 </head>
 <body>
+<div class="max-w-3xl mx-auto mt-6">
   <nav>
     <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('movies.show', { slug: 'my-awesome-movie' }) }}">
@@ -17,6 +18,7 @@
       Another Awesome Movie
     </a>
   </nav>
-  <h1> It Works! </h1>
+  <h1 class="text-red-600"> It Works! </h1>
+</div>
 </body>
 </html>
