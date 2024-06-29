@@ -4,6 +4,7 @@
     {
       "type": "node",
       "request": "launch",
+      "outputCapture": "std",
       "name": "Debug Application",
       "runtimeExecutable": "node",
       "runtimeArgs": ["ace", "serve", "--watch"],

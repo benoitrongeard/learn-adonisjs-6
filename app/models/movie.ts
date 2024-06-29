@@ -1,8 +1,7 @@
-import { DateTime } from 'luxon'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
 import MovieService from '#services/movie_service'
 import { toHtml } from '@dimerapp/markdown/utils'
 import cache from '#services/cache_service'
+import logger from '@adonisjs/core/services/logger'
 
 // export default class Movie extends BaseModel {
 //   @column({ isPrimary: true })
@@ -36,7 +35,7 @@ export default class Movie {
 
   static async find(slug: string) {
     if (cache.has(slug)) {
-      console.log('cache hit')
+      logger.debug('Cache hit for %s', slug)
       return cache.get(slug)
     }
 
