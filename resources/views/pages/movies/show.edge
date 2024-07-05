@@ -11,22 +11,18 @@
 
 <body>
   <div class="max-w-3xl mx-auto mt-6">
-    <nav>
-      <a href="{{ route('home') }}">Home</a>
-      <a href="{{ route('movies.show', { slug: 'my-awesome-movie' }) }}">
-        My Awesome Movie
-      </a>
-      <a href="{{ route('movies.show', { slug: 'another-awesome-movie' }) }}">
-        Another Awesome Movie
-      </a>
-      <a href="{{ route('movies.show', { slug: 'awesome-movie-the-trilogy' }) }}">
-        awesome-movie-the-trilogy
-      </a>
-    </nav>
+    @include('partials/nav')
+
     <h1>
       {{ movie.title }}
     </h1>
+
+    @if(movie.abstract)
     {{{ movie.abstract }}}
+    @end
+
+    {{-- {{inspect(state)}} --}}
+    {{-- {{inspect(movie)}} --}}
   </div>
 </body>
 
